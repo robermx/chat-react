@@ -13,6 +13,7 @@ FrontEnd: Build a Realtime Chat App with ReactJS.
 - ReactJS
 - Vite
 - TypeScript
+- Pusher JS
 ```
 
 ## Credentials
