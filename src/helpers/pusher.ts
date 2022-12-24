@@ -7,7 +7,7 @@ export const getPusher = (setMessages: any) => {
   });
 
   const channel = pusher.subscribe('chat');
-  channel.bind('message', function (data: object) {
+  channel.bind('message', function (data: any) {
     allMessages.push(data);
     setMessages(allMessages);
   });
