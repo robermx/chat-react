@@ -1,5 +1,5 @@
 interface HeaderProps {
-  username: string;
+  username?: string;
   setUsername: React.Dispatch<React.SetStateAction<string>>;
 }
 
