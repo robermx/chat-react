@@ -12,8 +12,11 @@ FrontEnd: Build a Realtime Chat App with ReactJS.
 ```bash
 - ReactJS
 - Vite
-- TypeScript
 - Pusher JS
+- TypeScript
+- Tailwindcss
+- Autoprefixer
+- Postcss
 ```
 
 ## Credentials

@@ -1,36 +1,13 @@
-import { useEffect, useState } from 'react';
+import HeaderNav from './components/HeaderNav';
+import Login from './pages/Login';
 
-import Header from './components/Header';
-import InputMessages from './components/InputMessages';
-import MessagesBox from './components/MessagesBox';
-
-import { getPusher } from './helpers/pusher';
-
-function App() {
-  const [username, setUsername] = useState('username');
-  const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState('');
-
-  let callToPusher: boolean = true;
-  useEffect(() => {
-    if (callToPusher) getPusher(setMessages);
-    return () => {
-      callToPusher = false;
-    };
-  }, []);
-
+const App = () => {
   return (
-    <div className="container mx-auto shadow-lg rounded-lg">
-      <Header username={username} setUsername={setUsername} />
-      <MessagesBox messages={messages} />
-      <InputMessages
-        username={username}
-        message={message}
-        setMessage={setMessage}
-        setMessages={setMessages}
-      />
+    <div className="App">
+      <HeaderNav />
+      <Login />
     </div>
   );
-}
+};
 
 export default App;
