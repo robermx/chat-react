@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import Header from '../components/Header';
+import HeaderNav from '../components/HeaderNav';
 import InputMessages from '../components/InputMessages';
 import MessagesBox from '../components/MessagesBox';
 
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="container mx-auto shadow-lg rounded-lg">
-      <Header username={username} setUsername={setUsername} />
+      <HeaderNav username={username} setUsername={setUsername} />
       <MessagesBox messages={messages} />
       <InputMessages
         username={username}

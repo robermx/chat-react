@@ -1,4 +1,9 @@
-const HeaderNav = () => {
+interface HeaderProps {
+  username?: string;
+  setUsername: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const HeaderNav = ({ username, setUsername }: HeaderProps) => {
   return (
     <nav className="bg-white border-gray-200 px-2 dark:bg-gray-900">
       <div className="container flex items-center justify-between mx-auto">
