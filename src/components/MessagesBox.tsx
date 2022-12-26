@@ -7,16 +7,14 @@ interface MessagesProps {
 
 const MessagesBox = ({ messages }: MessagesProps) => {
   return (
-    <div className="bg-white">
-      <div className="px-5">
-        {messages.map((message: MessagesProps, idx: number) => (
-          <div key={idx} className="my-4 w-fit">
-            <div className="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white">
-              <strong>{message.username}</strong> {message.message}
-            </div>
+    <div className="px-5">
+      {messages.map((message: MessagesProps, idx: number) => (
+        <div key={idx} className="my-4 w-fit">
+          <div className="ml-2 py-3 px-4 bg-blue-700 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white">
+            <strong>{message.username}</strong> {message.message}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

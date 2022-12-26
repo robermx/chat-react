@@ -4,14 +4,12 @@ interface InputMessageProps {
   message?: string;
   username?: string;
   setMessage: Dispatch<SetStateAction<string>>;
-  setMessages: Dispatch<SetStateAction<never[]>>;
 }
 
 const InputMessages = ({
   message,
   username,
   setMessage,
-  setMessages,
 }: InputMessageProps) => {
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
@@ -28,7 +26,7 @@ const InputMessages = ({
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="py-10 px-6">
+      <div className="py-10">
         <input
           className="w-full bg-gray-300 py-5 px-4 rounded-xl"
           type="text"
