@@ -24,7 +24,7 @@ const Register = () => {
 
     const content = await response.json();
 
-    if (content.statusCode === 500) {
+    if (content.statusCode === 400) {
       return alert(`This User is already registered`);
     }
 
