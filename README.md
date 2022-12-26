@@ -18,6 +18,7 @@ FrontEnd: Build a Realtime Chat App with ReactJS.
 - Autoprefixer
 - Postcss
 - React Router Dom
+- Fontawesome React
 ```
 
 ## Credentials

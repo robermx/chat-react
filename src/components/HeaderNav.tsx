@@ -1,4 +1,5 @@
-import logoutIcon from '../assets/logout-icon.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 interface HeaderProps {
   username?: string;
@@ -6,7 +7,7 @@ interface HeaderProps {
 
 const HeaderNav = ({ username }: HeaderProps) => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 pt-4">
       <div className="container flex items-center justify-between mx-auto">
         <div className="flex items-center py-5">
           <img
@@ -20,7 +21,7 @@ const HeaderNav = ({ username }: HeaderProps) => {
         </div>
 
         <button className="block text-white">
-          <i className="fa-solid fa-right-from-bracket fa-xl"></i>
+          <FontAwesomeIcon icon={faRightFromBracket} size="xl" />
         </button>
       </div>
     </nav>
