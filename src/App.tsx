@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import ChatApp from './pages/ChatApp';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -11,6 +12,7 @@ const App = () => {
             <Route path="/" element={<Navigate replace to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/auth" element={<ChatApp />} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </BrowserRouter>

@@ -6,7 +6,7 @@ import MessagesBox from '../components/MessagesBox';
 
 import { getPusher } from '../helpers/pusher';
 
-function App() {
+function ChatApp() {
   const [username, setUsername] = useState('username');
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
@@ -33,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default ChatApp;

@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const initialState = {
@@ -9,17 +9,28 @@ const Register = () => {
     password: '',
   };
   const [registeredData, setRegisteredData] = useState(initialState);
+  const navigate = useNavigate();
 
   const handleRegister = async (e: SyntheticEvent) => {
     e.preventDefault();
+
     const url = 'http://localhost:8000/api/register';
+
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(registeredData),
     });
+
     const content = await response.json();
-    console.log(content);
+
+    if (content.statusCode === 500) {
+      return alert(`This User is already registered`);
+    }
+
+    setRegisteredData(initialState);
+
+    return navigate('/login');
   };
 
   return (
@@ -55,6 +66,7 @@ const Register = () => {
                 onChange={(e) =>
                   setRegisteredData({ ...registeredData, name: e.target.value })
                 }
+                value={registeredData.name}
               />
             </div>
             <div>
@@ -77,6 +89,7 @@ const Register = () => {
                     lastname: e.target.value,
                   })
                 }
+                value={registeredData.lastname}
               />
             </div>
             <div>
@@ -99,6 +112,7 @@ const Register = () => {
                     email: e.target.value,
                   })
                 }
+                value={registeredData.email}
               />
             </div>
             <div>
@@ -121,6 +135,7 @@ const Register = () => {
                     password: e.target.value,
                   })
                 }
+                value={registeredData.password}
               />
             </div>
 
